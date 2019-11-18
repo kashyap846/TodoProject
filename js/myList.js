@@ -20,16 +20,34 @@ function textIdSelectorFunction(event) {
 
         labelValue.textContent = textvalue;
         const listItems = document.querySelector('#list-items');
+
+        const db = window.localStorage;
+        const itemString = new XMLSerializer().serializeToString(itemContent);
+        db.setItem(idValue, itemString);
+
         listItems.appendChild(itemContent);
     }
 
     textIdSelector.value = '';
 }
+function loadToDos() {
+    const db = window.localStorage;
+    Object.keys(db).forEach(addItem);
+    
+}
+function addItem(item) {
+    const db = window.localStorage;
+    const list = document.querySelector('#list-items');
+    const node = document.createRange().createContextualFragment(db.getItem(item));
+    list.appendChild(node);
+}
 function bindFuncToButton() {
     let button = document.querySelector('#add-button');
     button.addEventListener('click', textIdSelectorFunction);
-    
+    loadToDos();
 }
+
+
 function show_img(checkbox){
 
     if (checkbox.checked){
@@ -39,6 +57,18 @@ function show_img(checkbox){
     
     document.getElementById("smiley").setAttribute("style","display:none");
 }
+}
+
+
+function checkBoxUpdate(cb) {
+    if (cb.checked) {
+        cb.setAttribute('checked', cb.checked);
+    } else {
+        cb.removeAttribute('checked');
+    }
+    const itemString = new XMLSerializer().serializeToString(cb.parentNode);
+    const id = cb.id;
+    window.localStorage.setItem(id, itemString);
 }
 
 bindFuncToButton();

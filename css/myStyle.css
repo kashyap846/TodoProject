@@ -56,6 +56,15 @@ input[type=checkbox]:checked + label::before {
     
 }
 
+input[type=checkbox]:focus + label::after {
+    outline: rgb(59, 153, 252) solid 0.1em;
+}
+
+input[type=checkbox]:checked + label::after {
+    content: url('img/thumbs-up.jpg');
+    
+}
+
 input[type="text"]{
     border: 1px solid #000;
 
@@ -68,6 +77,7 @@ input[type="text"]{
     overflow-y: auto;
     justify-content: space-between;
     justify-content: space-evenly;
+    background-color: cyan;
 }
 #addForm
 {
@@ -78,6 +88,7 @@ input[type="text"]{
     justify-content: space-evenly;
     align-items: center;
     border-bottom: 0.1em solid goldenrod;
+    background-color: rgb(34, 180, 136);
 }
 
 #list-items{
@@ -97,8 +108,17 @@ input[type="text"]{
 
 }
 
+input + label + img {
+    display: none;
+}
 
+input:checked + label + img {
+    display: block;
+}
 
+header{
+    background-color: rgb(33, 155, 177);
+}
 
 
 
