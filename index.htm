@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="Kashyap">
+    <meta name="Description" content="This is my To Do list ">
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+    
+</head>
+<body>
+    <header>
+        <img src="img/toDoList.jpg" alt="image " id="titleImage">
+    </header>
+    <main>
+        
+        <form action="#" method="get" id="addForm">
+            
+            <label for="text-ID">My To-Do List</label>
+            <input id="text-ID" type="text" name="text-ID">
+            <input id="add-button" type="image" src="img/addtoany-logo.jpg" alt="Add a To Do">
+        
+        </form>
+        <form action="#" method="get" id="listForm">
+            <ol id="list-items">
+                
+            </ol>
+        </form>
+    </main>
+    <footer>
+        <template id="item-template">
+        
+            <li>
+            
+                <input id="select-ID" type="checkbox" name="select-ID">
+                <label for="select-ID"></label>
+                <img src="img/thumbs-up.jpg" alt="smiley" width="50" height="50" id="smiley" style="display:inline">
+            
+            </li>
+            
+        </template>
+        Copyright &copy;Kashyap
+    </footer>
+    
+    <script src="js/myList.js"></script>
+</body>
+</html>
