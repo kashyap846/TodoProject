@@ -21,30 +21,30 @@ function textIdSelectorFunction(event) {
         labelValue.textContent = textvalue;
         const listItems = document.querySelector('#list-items');
 
-        const db = window.localStorage;
+        const dataObj = window.localStorage;
         const itemString = new XMLSerializer().serializeToString(itemContent);
-        db.setItem(idValue, itemString);
+        dataObj.setItem(idValue, itemString);
 
         listItems.appendChild(itemContent);
     }
 
     textIdSelector.value = '';
 }
-function loadToDos() {
+function loadContent() {
     const db = window.localStorage;
-    Object.keys(db).forEach(addItem);
+    Object.keys(db).forEach(addStoredItems);
     
 }
-function addItem(item) {
-    const db = window.localStorage;
+function addStoredItems(item) {
+    const dataObj = window.localStorage;
     const list = document.querySelector('#list-items');
-    const node = document.createRange().createContextualFragment(db.getItem(item));
+    const node = document.createRange().createContextualFragment(dataObj.getItem(item));
     list.appendChild(node);
 }
 function bindFuncToButton() {
     let button = document.querySelector('#add-button');
     button.addEventListener('click', textIdSelectorFunction);
-    loadToDos();
+    loadContent();
 }
 
 
@@ -60,15 +60,15 @@ function show_img(checkbox){
 }
 
 
-function checkBoxUpdate(cb) {
-    if (cb.checked) {
-        cb.setAttribute('checked', cb.checked);
+function checkBoxUpdate(checkbox) {
+    if (checkbox.checked) {
+        checkbox.setAttribute('checked', checkbox.checked);
     } else {
-        cb.removeAttribute('checked');
+        checkbox.removeAttribute('checked');
     }
-    const itemString = new XMLSerializer().serializeToString(cb.parentNode);
-    const id = cb.id;
-    window.localStorage.setItem(id, itemString);
+    const itemString = new XMLSerializer().serializeToString(checkbox.parentNode);
+    const checkBoxid = checkbox.id;
+    window.localStorage.setItem(checkBoxid, itemString);
 }
 
 bindFuncToButton();

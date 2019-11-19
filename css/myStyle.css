@@ -134,6 +134,7 @@ header, footer {
 /* Footer */
 footer {
     border-top: 0.1em solid goldenrod;
+    background-color: rgb(90, 173, 228);
 }
 
 img#titleImage
