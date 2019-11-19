@@ -56,13 +56,22 @@ input[type=checkbox]:checked + label::before {
     
 }
 
-input[type=checkbox]:focus + label::after {
-    outline: rgb(59, 153, 252) solid 0.1em;
-}
+
 
 input[type=checkbox]:checked + label::after {
-    content: url('img/thumbs-up.jpg');
+    content: url('/img/thumbs-up.jpg');
+    position: absolute;
+    top: 0.1em;
+    left: -1.5em;
+    width: 1em;
+    height: .75em;
+    border: thin solid red;
+    margin-right: 1em;
+    padding: 0 .1em 1.1em .1em;
     
+}
+img#smiley{
+
 }
 
 input[type="text"]{
@@ -108,14 +117,6 @@ input[type="text"]{
 
 }
 
-input + label + img {
-    display: none;
-}
-
-input:checked + label + img {
-    display: block;
-}
-
 header{
     background-color: rgb(33, 155, 177);
 }
@@ -134,11 +135,11 @@ header, footer {
 /* Footer */
 footer {
     border-top: 0.1em solid goldenrod;
-    background-color: rgb(90, 173, 228);
+    background-color: aquamarine;
 }
 
 img#titleImage
 {
-    border: 10px solid ;
-    padding: 15px;
+    border: 5px solid black;
+    padding: 10px;
 }
