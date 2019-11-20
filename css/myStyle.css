@@ -61,13 +61,13 @@ input[type=checkbox]:checked + label::before {
 input[type=checkbox]:checked + label::after {
     content: url('/img/thumbs-up.jpg');
     position: absolute;
-    top: 0.1rem;
+    /* top: 0.1rem; */
     /* left: -1.5em; */
-    right: 1rem;
-    width: 0.1rem;
-    height: 0.1rem;
+    right: 1em;
+    width: 0.1em;
+    height: 10%; 
     /* border: thin solid red; */
-    margin-right: 1rem;
+    margin-right: 1em;
     padding: 0 .1em 1.1em .1em;
     
 }
@@ -84,7 +84,7 @@ background-color:rgb(214, 34, 34);
    
     display: grid;
     grid-template-columns: max-content;
-    grid-auto-rows: max-content;
+    grid-auto-rows: max-content; 
     height: 100%;
     font-size: 1.3rem;
     list-style: none;
@@ -121,7 +121,7 @@ input[type="text"]{
 
 
 #list-items > li{
-    height: 3em;
+    height: 2em;
 
 }
 
