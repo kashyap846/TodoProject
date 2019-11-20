@@ -30,9 +30,9 @@ function textIdSelectorFunction(event) {
 
     textIdSelector.value = '';
 }
-function loadContent() {
-    const db = window.localStorage;
-    Object.keys(db).forEach(addStoredItems);
+function setContent() {
+    const dataObj = window.localStorage;
+    Object.keys(dataObj).forEach(addStoredItems);
     
 }
 function addStoredItems(item) {
@@ -41,10 +41,10 @@ function addStoredItems(item) {
     const node = document.createRange().createContextualFragment(dataObj.getItem(item));
     list.appendChild(node);
 }
-function bindFuncToButton() {
+function linkFuncToButton() {
     let button = document.querySelector('#add-button');
     button.addEventListener('click', textIdSelectorFunction);
-    loadContent();
+    setContent();
 }
 
 
@@ -71,4 +71,4 @@ function checkBoxUpdate(checkbox) {
     window.localStorage.setItem(checkBoxid, itemString);
 }
 
-bindFuncToButton();
+linkFuncToButton();
