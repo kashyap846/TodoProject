@@ -58,22 +58,23 @@ input[type=checkbox]:checked + label::before {
 
 
 
-input[type=checkbox]:checked + label::after {
+/* input[type=checkbox]:checked + label::after {
     content: url('/img/thumbs-up.jpg');
     position: absolute;
-    /* top: 0.1rem; */
-    /* left: -1.5em; */
+    top: 0.1rem; 
+    left: -1.5em;
     right: 1em;
     width: 0.1em;
     height: 10%; 
-    /* border: thin solid red; */
+    border: thin solid red;
     margin-right: 1em;
     padding: 0 .1em 1.1em .1em;
     
-}
+} 
+*/
 ol li:nth-child(odd) 
 { 
-background-color:rgb(255, 217, 192);
+background-color:rgb(12, 150, 30);
  }
 ol li:nth-child(even) 
 { 
@@ -144,6 +145,7 @@ header, footer {
 footer {
     border-top: 0.1em solid goldenrod;
     background-color: aquamarine;
+    height: 100%;
 }
 
 img#titleImage

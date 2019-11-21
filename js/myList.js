@@ -48,23 +48,19 @@ function linkFuncToButton() {
 }
 
 
-function show_img(checkbox){
 
-    if (checkbox.checked){
-        
-        document.getElementById("smiley").setAttribute("style","display:inline");
-}else{
-    
-    document.getElementById("smiley").setAttribute("style","display:none");
-}
-}
 
 
 function checkBoxUpdate(checkbox) {
+   
     if (checkbox.checked) {
         checkbox.setAttribute('checked', checkbox.checked);
+       
+        document.querySelector('#'+checkbox.id+'+label+img').setAttribute("style","display:inline");
+       
     } else {
         checkbox.removeAttribute('checked');
+        document.querySelector('#'+checkbox.id+'+label+img').setAttribute("style","display:none");
     }
     const itemString = new XMLSerializer().serializeToString(checkbox.parentNode);
     const checkBoxid = checkbox.id;
