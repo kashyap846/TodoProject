@@ -56,22 +56,6 @@ input[type=checkbox]:checked + label::before {
     
 }
 
-
-
-/* input[type=checkbox]:checked + label::after {
-    content: url('/img/thumbs-up.jpg');
-    position: absolute;
-    top: 0.1rem; 
-    left: -1.5em;
-    right: 1em;
-    width: 0.1em;
-    height: 10%; 
-    border: thin solid red;
-    margin-right: 1em;
-    padding: 0 .1em 1.1em .1em;
-    
-} 
-*/
 ol li:nth-child(odd) 
 { 
 background-color:rgb(12, 150, 30);
@@ -91,6 +75,14 @@ background-color:rgb(214, 34, 34);
     list-style: none;
     
     
+    
+}
+.list{
+    /* animation: fade-out 0.5s ease-in 0.1s 1 forwards; */
+    animation: fade-out 5s ease-in-out 2s alternate infinite none; 
+    
+    transition: height 1s;
+
 }
 
 
@@ -148,8 +140,14 @@ footer {
     height: 100%;
 }
 
-img#titleImage
-{
-    /* border: 100% solid black; */
-    /* padding: 100%; */
+@keyframes fade-out /* Name */ {
+    0% { /* key frame position */
+        opacity: 0; /* property */
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
+
+

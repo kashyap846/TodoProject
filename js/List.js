@@ -67,4 +67,11 @@ function checkBoxUpdate(checkbox) {
     window.localStorage.setItem(checkBoxid, itemString);
 }
 
+function deleteListItems(elem){
+    const key= elem.parentNode.querySelector("input[type=checkbox]").id;
+    const dataObj = window.localStorage;
+    dataObj.removeItem(key);
+    elem.parentNode.remove();
+}
+
 linkFuncToButton();

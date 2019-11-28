@@ -41,12 +41,13 @@
     <footer>
         <template id="item-template">
         
-            <li>
+            <li class="list">
             
                 <input id="select-ID" type="checkbox" name="select-ID" onclick="checkBoxUpdate(this)">
                 <label for="select-ID"></label>
                 <img src="img/thumbs-up.jpg"  alt="smiley" width="30" height="30" class="image" style="display:none"> 
-            
+                
+                <input type="button" name="delete" onclick="deleteListItems(this)" value="Delete">
             </li>
             
         </template>
