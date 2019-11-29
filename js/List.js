@@ -68,10 +68,19 @@ function checkBoxUpdate(checkbox) {
 }
 
 function deleteListItems(elem){
+    
+    elem.parentNode.setAttribute("class","listDelete");
+    
+    elem.addEventListener('animationStart',listenerFunc);
     const key= elem.parentNode.querySelector("input[type=checkbox]").id;
     const dataObj = window.localStorage;
     dataObj.removeItem(key);
-    elem.parentNode.remove();
+   elem.parentNode.remove();
+}
+function listenerFunc(event){
+    //alert("listenerFunc");
+    const elem = document.querySelector(".list")
+    
 }
 
 linkFuncToButton();

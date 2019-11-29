@@ -79,12 +79,25 @@ background-color:rgb(214, 34, 34);
 }
 .list{
     /* animation: fade-out 0.5s ease-in 0.1s 1 forwards; */
-    animation: fade-out 5s ease-in-out 2s alternate infinite none; 
+    animation: fade-out 1s ease-in 2s none; 
+    transition-property: width, opacity;
+    transition-duration: 1000ms 1000ms;
     
-    transition: height 1s;
+    
 
 }
-
+.listDelete{
+     animation: disappear 1s 2s;
+    /* visibility: hidden; */
+}
+.list:hover{
+    
+    background: rgb(230, 129, 14);
+    width: 150%;
+    opacity: 0.8;
+    transform: rotate(5deg);
+    font-family: impact;
+}
 
 input[type="text"]{
     border: 1px solid #000;
@@ -142,10 +155,19 @@ footer {
 
 @keyframes fade-out /* Name */ {
     0% { /* key frame position */
-        opacity: 0; /* property */
+        opacity: 1; /* property */
     }
     100% {
-        opacity: 1;
+        opacity: 0;
+    }
+}
+
+@keyframes disappear /* Name */ {
+    from { /* key frame position */
+        opacity: 1; /* property */
+    }
+    to {
+        opacity: 0;
     }
 }
 
