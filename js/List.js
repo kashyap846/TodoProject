@@ -26,6 +26,8 @@ function textIdSelectorFunction(event) {
         dataObj.setItem(idValue, itemString);
 
         listItems.appendChild(itemContent);
+        let elem = document.querySelector('.list');
+        elem.addEventListener('animationend',listenerFunc);
     }
 
     textIdSelector.value = '';
@@ -45,6 +47,7 @@ function linkFuncToButton() {
     let button = document.querySelector('#add-button');
     button.addEventListener('click', textIdSelectorFunction);
     setContent();
+    
 }
 
 
@@ -69,17 +72,15 @@ function checkBoxUpdate(checkbox) {
 
 function deleteListItems(elem){
     
-    elem.parentNode.setAttribute("class","listDelete");
-    
-    elem.addEventListener('animationStart',listenerFunc);
+   
     const key= elem.parentNode.querySelector("input[type=checkbox]").id;
     const dataObj = window.localStorage;
     dataObj.removeItem(key);
    elem.parentNode.remove();
 }
 function listenerFunc(event){
-    //alert("listenerFunc");
-    const elem = document.querySelector(".list")
+    alert("animation is stopped");
+    //const elem = document.querySelector(".list")
     
 }
 
