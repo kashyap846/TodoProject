@@ -7,6 +7,15 @@
     font-size: inherit;
     color: inherit;
 }
+@media screen and (max-width: 480px) {
+    :root {
+        color: orange;
+        --root-font-size: calc(1rem + (5) * ((100vw - 300px) / (1080 - 300)));
+
+    }
+}
+
+
 :root,html
 body {
     height: 100%;
@@ -21,7 +30,8 @@ main{
 }
 html {
     box-sizing: border-box;
-    font-size: calc(1rem + (5) * ((100vw - 300px) / (1080 - 300)));
+    font-size: var(--root-font-size, 1rem);
+
 }
 input[type=checkbox] {
     width: 0;
