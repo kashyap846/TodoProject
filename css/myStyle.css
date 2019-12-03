@@ -10,9 +10,12 @@
 @media screen and (max-width: 480px) {
     :root {
         color: orange;
-        --root-font-size: calc(1rem + (5) * ((100vw - 300px) / (1080 - 300)));
-
+        
     }
+}
+:root{
+--root-font-size: calc(1rem + (5) * ((100vw - 300px) / (1080 - 300)));
+
 }
 
 
