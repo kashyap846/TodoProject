@@ -47,6 +47,22 @@ function addStoredItems(item) {
 function linkFuncToButton() {
     let button = document.querySelector('#add-button');
     button.addEventListener('click', textIdSelectorFunction);
+    window.addEventListener('online', (event) => {
+        //alert("You are now connected to the network.");
+        //document.querySelector('header #displayMessage').innerHTML('<p>You are now connected to the network.</p>');
+    
+        document.getElementById("displayMessage").innerHTML = "<p style='color:red'>You are now connected to the network.</p>";
+    });
+    
+    // ononline version
+    // window.ononline = (event) => {
+    //   alert("You are now connected to the network.");
+    // };
+    
+    window.addEventListener('offline', (event) => {
+        document.getElementById("displayMessage").innerHTML = "<p style='color:red'>Network connection is lost</p>";
+        //document.querySelector('header #displayMessage').innerHTML('<p>Network connection is lost</p>')
+    });
     setContent();
     
 }
